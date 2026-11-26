@@ -40,42 +40,69 @@ Households are billed for electricity based on progressive consumption slabs, al
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Initialize months, units, empty bills list]
-         |
-         v
-   /For each month/ <--------------------+
-         |                               |
-         v                               |
-[Compute progressive energy_charge]      |
-         |                               |
-         v                               |
-  <units <= 100?> --Yes--> [Apply 5% Rebate]
-         | No                            |
-         v                               |
-  <units > 400?> ---Yes--> [Apply 10% Surcharge]
-         | No                            |
-         v                               |
-[total_bill = energy + fixed + surcharge - rebate]
-         |                               |
-         v                               |
-[Append to bills list & Print Bill] -----+
-         | (Loop Ends)
-         v
-/For index i = 1 to N-1/ <---------------+
-         |                               |
-         v                               |
-[Calculate % increase from bills[i-1]]   |
-         |                               |
-         v                               |
-   <% increase > 30%?> --Yes--> [Flag Unusual Spike]
-         | No                            |
-         +-------------------------------+
-         | (Loop Ends)
-         v
-       [Stop]
+                   .---------------.
+                   |     Start     |
+                   '---------------'
+                            |
+                            v
+       .-----------------------------------------.
+       | Initialize months, units, empty bills |
+       '-----------------------------------------'
+                            |
+                            v
+                  .--------------------.
+                  |   For each month   |<----------------------------------+
+                  '--------------------'                                   |
+                            |                                             |
+                            v                                             |
+            .-------------------------------.                             |
+            | Compute progressive energy_charge |                           |
+            '-------------------------------'                             |
+                            |                                             |
+                            v                                             |
+                   .-----------------.       .-----------------.        |
+                   |  units <= 100?  |---Yes->| Apply 5% Rebate |        |
+                   '-----------------'       '-----------------'        |
+                            |                        |                    |
+                            | No                     |                    |
+                            v                        |                    |
+                   .-----------------.       .---------------------.      |
+                   |  units > 400?   |---Yes->| Apply 10% Surcharge |      |
+                   '-----------------'       '---------------------'      |
+                            |                         |                   |
+                            | No                      |                   |
+                            v                         |                   |
+       .-----------------------------------------.<----------------------+
+       | total_bill = energy + fixed + sur - reb |
+       '-----------------------------------------'
+                            |
+                            v
+            .-------------------------------.
+            | Append to bills & Print Bill  |-----------------------------+
+            '-------------------------------'
+                            | (Loop Ends)
+                            v
+               .--------------------------.
+               |  For index i = 1 to N-1  |<-------------------------------+
+               '--------------------------'                                |
+                            |                                             |
+                            v                                             |
+         .-------------------------------------.                          |
+         | Calculate % inc from bills[i-1]     |                          |
+         '-------------------------------------'                          |
+                            |                                             |
+                            v                                             |
+                  .--------------------.       .--------------------.     |
+                  |  % inc > 30%?      |---Yes->| Flag Unusual Spike |     |
+                  '--------------------'       '--------------------'     |
+                            |                            |                |
+                            | No                         |                |
+                            +----------------------------+----------------+
+                            | (Loop Ends)
+                            v
+                   .---------------.
+                   |     Stop      |
+                   '---------------'
 ```
 
 ## 6. Pseudocode
