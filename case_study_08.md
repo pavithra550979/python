@@ -32,32 +32,50 @@ In shift-based workplaces such as hospitals, retail stores, and support centers,
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Load shifts list & conflict_count = 0]
-         |
-         v
-/Outer Loop i = 0 to N-1/ <--------------+
-         |                               |
-         v                               |
-/Inner Loop j = i+1 to N-1/ <--------+   |
-         |                           |   |
-         v                           |   |
-<id1==id2 AND day1==day2?> --No------+   |
-         | Yes                       |   |
-         v                           |   |
-<start1 < end2 AND start2 < end1?> -No-+ |
-         | Yes                       |   |
-         v                           |   |
-[Increment conflict_count]           |   |
-[Compute & Print Overlap Window] ----+---+
-         | (Loops End)
-         v
-[Print Total Conflicts Summary]
-         |
-         v
-       [Stop]
+                   +---------------+
+                   |     Start     |
+                   +---------------+
+                           |
+                           v
+         +-----------------------------------+
+         | Load shifts list & conflicts = 0  |
+         +-----------------------------------+
+                           |
+                           v
+              +-------------------------+
+              | Outer Loop i = 0 to N-1 |<---------------------+
+              +-------------------------+                      |
+                           |                                   |
+                           v                                   |
+             +---------------------------+                     |
+             | Inner Loop j = i+1 to N-1 |<----------------+   |
+             +---------------------------+                 |   |
+                           |                               |   |
+                           v                               |   |
+              +-------------------------+                  |   |
+              | id1==id2 & day1==day2?  |--No--------------+   |
+              +-------------------------+                  |   |
+                           | Yes                           |   |
+                           v                               |   |
+          +---------------------------------+              |   |
+          | start1 < end2 & start2 < end1?  |--No----------+   |
+          +---------------------------------+              |   |
+                           | Yes                           |   |
+                           v                               |   |
+      +-----------------------------------------+          |   |
+      | Increment conflict_count                |          |   |
+      | Compute & Print Overlap Window          |----------+---+
+      +-----------------------------------------+
+                           | (Loops End)
+                           v
+         +-----------------------------------+
+         | Print Total Conflicts Summary     |
+         +-----------------------------------+
+                           |
+                           v
+                   +---------------+
+                   |     Stop      |
+                   +---------------+
 ```
 
 ## 6. Pseudocode
