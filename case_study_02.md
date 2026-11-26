@@ -41,34 +41,69 @@ Organizations calculate employee net pay by combining basic salary, allowances, 
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Load list of employee tuples]
-         |
-         v
-/For each employee tuple/ <--------------+
-         |                               |
-         v                               |
-[Unpack id, name, basic, ot, incentive]  |
-         |                               |
-         v                               |
-[Calculate HRA, DA, OT Pay, Gross Salary]|
-         |                               |
-         v                               |
-[Calculate PF & Professional Tax]        |
-         |                               |
-         v                               |
-[Compute Progressive Income Tax]         |
-         |                               |
-         v                               |
-[Net Salary = Gross - Total Deductions]  |
-         |                               |
-         v                               |
-[Print Formatted Salary Statement] ------+
-         | (Loop Ends)
-         v
-       [Stop]
+                   +---------------+
+                   |     Start     |
+                   +---------------+
+                           |
+                           v
+       +---------------------------------------+
+       | Initialize months, units, empty bills |
+       +---------------------------------------+
+                           |
+                           v
+                  +------------------+
+                  | For each month   |<----------------------------------+
+                  +------------------+                                   |
+                           |                                             |
+                           v                                             |
+         +-----------------------------------+                           |
+         | Compute progressive energy_charge |                           |
+         +-----------------------------------+                           |
+                           |                                             |
+                           v                                             |
+                   +---------------+       +-----------------+           |
+                   | units <= 100? |---Yes>| Apply 5% Rebate |           |
+                   +---------------+       +-----------------+           |
+                           |                        |                    |
+                           | No                     |                    |
+                           v                        |                    |
+                   +---------------+       +---------------------+       |
+                   |  units > 400? |---Yes>| Apply 10% Surcharge |       |
+                   +---------------+       +---------------------+       |
+                           |                         |                   |
+                           | No                      |                   |
+                           v                         |                   |
+       +---------------------------------------+     |                   |
+       | total_bill = energy + fixed + sur - reb|<---+                   |
+       +---------------------------------------+                           |
+                           |                                             |
+                           v                                             |
+         +-----------------------------------+                           |
+         | Append to bills & Print Bill      |---------------------------+
+         +-----------------------------------+
+                           | (Loop Ends)
+                           v
+               +------------------------+
+               | For index i = 1 to N-1 |<-------------------------------+
+               +------------------------+                                |
+                           |                                             |
+                           v                                             |
+         +-----------------------------------+                           |
+         | Calculate % inc from bills[i-1] |                           |
+         +-----------------------------------+                           |
+                           |                                             |
+                           v                                             |
+                  +------------------+       +--------------------+        |
+                  |  % inc > 30%?    |---Yes>| Flag Unusual Spike |        |
+                  +------------------+       +--------------------+        |
+                           |                            |                |
+                           | No                         |                |
+                           +----------------------------+----------------+
+                           | (Loop Ends)
+                           v
+                   +---------------+
+                   |     Stop      |
+                   +---------------+
 ```
 
 ## 6. Pseudocode
