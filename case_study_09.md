@@ -39,33 +39,56 @@ Campus canteens serve hundreds of orders daily across limited food inventory. Ac
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Initialize inventory, orders, revenue = 0]
-         |
-         v
-/For each order tuple/ <-----------------+
-         |                               |
-         v                               |
-[Unpack ord_id, cust, code, qty]         |
-[Search code in inventory]               |
-         |                               |
-         v                               |
-   <Item found?> --No--> [Reject: Invalid Code]
-         | Yes                           |
-         v                               |
- <0 < qty <= stock?> -No-> [Reject: Stock/Qty Error]
-         | Yes                           |
-         v                               |
-[bill = price * qty; stock -= qty]       |
-[revenue += bill; Print Receipt] --------+
-         | (Loop Ends)
-         v
-[Print Daily Sales & Closing Inventory]
-         |
-         v
-       [Stop]
+                   +---------------+
+                   |     Start     |
+                   +---------------+
+                           |
+                           v
+       +---------------------------------------+
+       | Initialize inventory, orders, rev = 0 |
+       +---------------------------------------+
+                           |
+                           v
+             +---------------------------+
+             | For each order tuple      |<-----------------------+
+             +---------------------------+                        |
+                           |                                      |
+                           v                                      |
+      +-----------------------------------------+                 |
+      | Unpack ord_id, cust, code, qty          |                 |
+      | Search code in inventory                |                 |
+      +-----------------------------------------+                 |
+                           |                                      |
+                           v                                      |
+                 +-------------------+        +----------------+  |
+                 |    Item found?    |---No-->| Reject: No Code|  |
+                 +-------------------+        +----------------+  |
+                           |                           |          |
+                           | Yes                       |          |
+                           v                           |          |
+                 +-------------------+        +----------------+  |
+                 | 0 < qty <= stock? |---No-->| Reject: Stock  |  |
+                 +-------------------+        +----------------+  |
+                           |                           |          |
+                           | Yes                       |          |
+                           v                           |          |
+      +-----------------------------------------+      |          |
+      | bill = price * qty; stock -= qty        |      |          |
+      | revenue += bill; Print Receipt          |<-----+          |
+      +-----------------------------------------+                 |
+                           |                                      |
+                           +--------------------------------------+
+                           | (Loop Ends)
+                           v
+         +-----------------------------------+
+         | Print Daily Sales & Closing Stock |
+         +-----------------------------------+
+                           |
+                           v
+                   +---------------+
+                   |     Stop      |
+                   +---------------+
+
 ```
 
 ## 6. Pseudocode
