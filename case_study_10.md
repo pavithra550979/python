@@ -32,34 +32,54 @@ Essential commodities and retail products experience frequent weekly price swing
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Load products list & threshold = 20.0%]
-         |
-         v
-/For each product tuple/ <---------------+
-         |                               |
-         v                               |
-[Unpack name, prices; compute overall %] |
-         |                               |
-         v                               |
-/Loop i = 1 to len(prices)-1/ <------+   |
-         |                           |   |
-         v                           |   |
-[Compute week-over-week % change]    |   |
-[Track max absolute swing]           |   |
-         |                           |   |
-         v                           |   |
-  <|pct_change| >= 20%?> -Yes-> [Print Volatility Alert]
-         | No                        |   |
-         +---------------------------+   |
-         | (Inner Loop Ends)             |
-         v                               |
-[Print Max Swing & Classification] ------+
-         | (Outer Loop Ends)
-         v
-       [Stop]
+                   +---------------+
+                   |     Start     |
+                   +---------------+
+                           |
+                           v
+         +-----------------------------------+
+         | Load products & threshold = 20.0% |
+         +-----------------------------------+
+                           |
+                           v
+             +---------------------------+
+             | For each product tuple    |<---------------------+
+             +---------------------------+                      |
+                           |                                    |
+                           v                                    |
+      +-----------------------------------------+               |
+      | Unpack name, prices; compute overall %  |               |
+      +-----------------------------------------+               |
+                           |                                    |
+                           v                                    |
+            +-----------------------------+                     |
+            | Loop i = 1 to len(prices)-1 |<----------------+   |
+            +-----------------------------+                 |   |
+                           |                                |   |
+                           v                                |   |
+      +-----------------------------------------+           |   |
+      | Compute week-over-week % change         |           |   |
+      | Track max absolute swing                |           |   |
+      +-----------------------------------------+           |   |
+                           |                                |   |
+                           v                                |   |
+                +---------------------+        +---------+  |   |
+                | |pct_change| >= 20? |---Yes->| Alert!  |  |   |
+                +---------------------+        +---------+  |   |
+                           |                        |       |   |
+                           | No                     |       |   |
+                           +------------------------+-------+   |
+                           | (Inner Loop Ends)                  |
+                           v                                    |
+         +-----------------------------------+                  |
+         | Print Max Swing & Classification  |------------------+
+         +-----------------------------------+
+                           | (Outer Loop Ends)
+                           v
+                   +---------------+
+                   |     Stop      |
+                   +---------------+
+
 ```
 
 ## 6. Pseudocode
