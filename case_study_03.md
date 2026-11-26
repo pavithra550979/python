@@ -34,33 +34,55 @@ Universities enforce a strict minimum attendance threshold (typically 75%) for e
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Load student attendance records]
-         |
-         v
-/For each student record/ <--------------+
-         |                               |
-         v                               |
-[current_pct = (attended / held) * 100]  |
-         |                               |
-         v                               |
- <current_pct >= 75%?> --Yes--> [Print Eligible Status]
-         | No                            |
-         v                               |
-[Loop: Add 1 to attended & held]         |
-[until pct >= 75% -> count consec_classes]
-         |                               |
-         v                               |
-[Evaluate 90% & 80% scenarios over]      |
-[remaining 30 semester classes]          |
-         |                               |
-         v                               |
-[Print Recovery Report] -----------------+
-         | (Loop Ends)
-         v
-       [Stop]
+                   +---------------+
+                   |     Start     |
+                   +---------------+
+                           |
+                           v
+         +-----------------------------------+
+         | Load student attendance records   |
+         +-----------------------------------+
+                           |
+                           v
+              +-------------------------+
+              | For each student record |<------------------------+
+              +-------------------------+                         |
+                           |                                      |
+                           v                                      |
+      +-----------------------------------------+                 |
+      | current_pct = (attended / held) * 100   |                 |
+      +-----------------------------------------+                 |
+                           |                                      |
+                           v                                      |
+                +---------------------+        +---------------+  |
+                | current_pct >= 75%? |---Yes->| Print Eligible|  |
+                +---------------------+        +---------------+  |
+                           |                           |          |
+                           | No                        |          |
+                           v                           |          |
+      +-----------------------------------------+      |          |
+      | While pct < 75%: add 1 to att & held    |      |          |
+      | Count minimum consecutive classes       |      |          |
+      +-----------------------------------------+      |          |
+                           |                           |          |
+                           v                           |          |
+      +-----------------------------------------+      |          |
+      | Evaluate 90% & 80% attendance scenarios |      |          |
+      | over remaining 30 semester classes      |      |          |
+      +-----------------------------------------+      |          |
+                           |                           |          |
+                           v                           |          |
+              +-------------------------+              |          |
+              | Print Recovery Report   |<-------------+          |
+              +-------------------------+                         |
+                           |                                      |
+                           +--------------------------------------+
+                           | (Loop Ends)
+                           v
+                   +---------------+
+                   |     Stop      |
+                   +---------------+
+
 ```
 
 ## 6. Pseudocode
