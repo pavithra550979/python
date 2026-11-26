@@ -39,30 +39,50 @@ Optical Mark Recognition (OMR) and online multiple-choice tests store student re
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Set answer_key, marking rules, submissions]
-         |
-         v
-/For each student submission/ <----------+
-         |                               |
-         v                               |
-<len(responses) == len(key)?> --No--> [Report Invalid Length Error]
-         | Yes                           |
-         v                               |
-[Loop i = 0 to len(key)-1]               |
-[Compare responses[i] with key[i]]       |
-[Update correct, incorrect, unanswered]  |
-         |                               |
-         v                               |
-[score = max(0, correct*4 - incorrect*1)]|
-         |                               |
-         v                               |
-[Compute % & Print Student Result] ------+
-         | (Loop Ends)
-         v
-       [Stop]
+                   +---------------+
+                   |     Start     |
+                   +---------------+
+                           |
+                           v
+      +-----------------------------------------+
+      | Set answer_key, marking rules, & list   |
+      +-----------------------------------------+
+                           |
+                           v
+             +---------------------------+
+             | For each student sub      |<------------------+
+             +---------------------------+                   |
+                           |                                 |
+                           v                                 |
+          +---------------------------------+    +--------+  |
+          | len(responses) == len(key)?     |-No>| Error  |  |
+          +---------------------------------+    +--------+  |
+                           |                          |      |
+                           | Yes                      |      |
+                           v                          |      |
+      +-----------------------------------------+     |      |
+      | Loop i = 0 to len(key)-1                |     |      |
+      | Compare responses[i] with key[i]        |     |      |
+      | Update correct, incorrect, unanswered   |     |      |
+      +-----------------------------------------+     |      |
+                           |                          |      |
+                           v                          |      |
+      +-----------------------------------------+     |      |
+      | score = max(0, correct*4 - incorrect*1) |     |      |
+      +-----------------------------------------+     |      |
+                           |                          |      |
+                           v                          |      |
+         +-----------------------------------+        |      |
+         | Compute % & Print Student Result  |<-------+      |
+         +-----------------------------------+               |
+                           |                                 |
+                           +---------------------------------+
+                           | (Loop Ends)
+                           v
+                   +---------------+
+                   |     Stop      |
+                   +---------------+
+
 ```
 
 ## 6. Pseudocode
