@@ -38,37 +38,60 @@ Weak user passwords expose systems to unauthorized access. Organizations enforce
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Load sample passwords & prohibited list]
-         |
-         v
-/For each password string/ <-------------+
-         |                               |
-         v                               |
-[Initialize empty errors list]           |
-         |                               |
-         v                               |
-[Check len >= 8 & no spaces]             |
-         |                               |
-         v                               |
-[Loop chars: check Upper, Lower, Digit, Special]
-         |                               |
-         v                               |
-[Check 3+ consecutive repeated chars]    |
-         |                               |
-         v                               |
-[Check prohibited substrings (lowercase)]|
-         |                               |
-         v                               |
-  <errors list empty?> --Yes--> [Print VALID]
-         | No                            |
-         v                               |
-[Print INVALID & all error messages] ----+
-         | (Loop Ends)
-         v
-       [Stop]
+                   +---------------+
+                   |     Start     |
+                   +---------------+
+                           |
+                           v
+       +---------------------------------------+
+       | Load sample passwords & prohibited    |
+       +---------------------------------------+
+                           |
+                           v
+             +---------------------------+
+             | For each password string  |<------------------+
+             +---------------------------+                   |
+                           |                                 |
+                           v                                 |
+         +-----------------------------------+               |
+         | Initialize empty errors list      |               |
+         +-----------------------------------+               |
+                           |                                 |
+                           v                                 |
+         +-----------------------------------+               |
+         | Check len >= 8 and no spaces      |               |
+         +-----------------------------------+               |
+                           |                                 |
+                           v                                 |
+      +-----------------------------------------+            |
+      | Loop chars: check Upper, Lower, Digit,  |            |
+      | and Special character flags             |            |
+      +-----------------------------------------+            |
+                           |                                 |
+                           v                                 |
+      +-----------------------------------------+            |
+      | Check 3+ consecutive repeated chars &   |            |
+      | prohibited substrings (case-insensitive)|            |
+      +-----------------------------------------+            |
+                           |                                 |
+                           v                                 |
+                +---------------------+        +----------+  |
+                | errors list empty?  |---Yes->|Print VALID| |
+                +---------------------+        +----------+  |
+                           |                        |        |
+                           | No                     |        |
+                           v                        |        |
+         +-----------------------------------+      |        |
+         | Print INVALID & all error messages|<-----+        |
+         +-----------------------------------+               |
+                           |                                 |
+                           +---------------------------------+
+                           | (Loop Ends)
+                           v
+                   +---------------+
+                   |     Stop      |
+                   +---------------+
+
 ```
 
 ## 6. Pseudocode
