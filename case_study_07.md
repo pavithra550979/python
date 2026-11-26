@@ -36,36 +36,59 @@ Academic departments maintain student examination scores across multiple subject
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Initialize students, subjects, marks_matrix]
-         |
-         v
-/Row Loop i = 0 to M-1/ <----------------+
-         |                               |
-         v                               |
-[Sum marks_matrix[i][j] across j=0..N-1] |
-[Compute student avg & track topper] ----+
-         | (Row Loop Ends)
-         v
-[Print Top Performer]
-         |
-         v
-/Column Loop j = 0 to N-1/ <-------------+
-         |                               |
-         v                               |
-[Loop i=0..M-1: sum, min, max of col j]  |
-[Compute subject avg]                    |
-         |                               |
-         v                               |
-  <subject avg < 70?> --Yes--> [Flag Low Average]
-         | No                            |
-         v                               |
-[Print Subject Statistics] --------------+
-         | (Column Loop Ends)
-         v
-       [Stop]
+                   +---------------+
+                   |     Start     |
+                   +---------------+
+                           |
+                           v
+      +-----------------------------------------+
+      | Initialize students, subjects, matrix   |
+      +-----------------------------------------+
+                           |
+                           v
+              +-------------------------+
+              | Row Loop i = 0 to M-1   |<------------------+
+              +-------------------------+                   |
+                           |                                |
+                           v                                |
+      +-----------------------------------------+           |
+      | Sum marks_matrix[i][j] across j=0..N-1  |           |
+      | Compute student avg & track topper      |-----------+
+      +-----------------------------------------+
+                           | (Row Loop Ends)
+                           v
+              +-------------------------+
+              |   Print Top Performer   |
+              +-------------------------+
+                           |
+                           v
+             +---------------------------+
+             | Column Loop j = 0 to N-1  |<-----------------+
+             +---------------------------+                  |
+                           |                                |
+                           v                                |
+      +-----------------------------------------+           |
+      | Loop i=0..M-1: sum, min, max of col j   |           |
+      | Compute subject avg                     |           |
+      +-----------------------------------------+           |
+                           |                                |
+                           v                                |
+                 +-------------------+       +-----------+  |
+                 | subject avg < 70? |--Yes->| Flag Low  |  |
+                 +-------------------+       +-----------+  |
+                           |                       |        |
+                           | No                    |        |
+                           v                       |        |
+         +-----------------------------------+     |        |
+         | Print Subject Statistics          |<----+        |
+         +-----------------------------------+              |
+                           |                                |
+                           +--------------------------------+
+                           | (Column Loop Ends)
+                           v
+                   +---------------+
+                   |     Stop      |
+                   +---------------+
 ```
 
 ## 6. Pseudocode
