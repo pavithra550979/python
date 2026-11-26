@@ -37,33 +37,56 @@ Automated Teller Machines (ATMs) process sequences of customer deposits and with
 
 ## 5. Flowchart
 ```text
-      [Start]
-         |
-         v
-[Initialize balance, limits, counters]
-         |
-         v
-/For each transaction tuple/ <-----------+
-         |                               |
-         v                               |
-<amount <= 0 or % 100 != 0?> -Yes-> [Reject: Invalid Denomination]
-         | No                            |
-         v                               |
-  <type == DEPOSIT?> --Yes--> [balance += amount; Approve]
-         | No                            |
-         v                               |
-<Exceeds single/daily limit or min bal?> -Yes-> [Reject: Limit/Balance Error]
-         | No                            |
-         v                               |
-[balance -= amount; daily_wd += amount; Approve]
-         |                               |
-         +-------------------------------+
-         | (Loop Ends)
-         v
-[Print Final ATM Session Summary]
-         |
-         v
-       [Stop]
+                   +---------------+
+                   |     Start     |
+                   +---------------+
+                           |
+                           v
+       +---------------------------------------+
+       | Initialize balance, limits, counters  |
+       +---------------------------------------+
+                           |
+                           v
+             +---------------------------+
+             | For each transaction tuple|<-----------------------+
+             +---------------------------+                        |
+                           |                                      |
+                           v                                      |
+          +---------------------------------+     +------------+  |
+          | amount <= 0 or amount % 100 != 0|-Yes>| Reject Txn |  |
+          +---------------------------------+     +------------+  |
+                           |                             |        |
+                           | No                          |        |
+                           v                             |        |
+                 +-------------------+     +----------+  |        |
+                 | type == DEPOSIT?  |-Yes>| Credit & |  |        |
+                 +-------------------+     | Approve  |  |        |
+                           |               +----------+  |        |
+                           | No                  |       |        |
+                           v                     |       |        |
+          +---------------------------------+    |  +----------+  |
+          | Exceeds single/daily/min_bal?   |-Yes|- |Reject Txn|  |
+          +---------------------------------+    |  +----------+  |
+                           |                     |       |        |
+                           | No                  |       |        |
+                           v                     |       |        |
+       +---------------------------------------+ |       |        |
+       | Deduct balance, update daily_wd,      | |       |        |
+       | increment approved_count              | |       |        |
+       +---------------------------------------+ |       |        |
+                           |                     |       |        |
+                           +---------------------+-------+--------+
+                           | (Loop Ends)
+                           v
+         +-----------------------------------+
+         | Print Final ATM Session Summary   |
+         +-----------------------------------+
+                           |
+                           v
+                   +---------------+
+                   |     Stop      |
+                   +---------------+
+
 ```
 
 ## 6. Pseudocode
