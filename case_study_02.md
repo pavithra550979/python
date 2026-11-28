@@ -1,4 +1,4 @@
-# Case Study 4: Employee Payroll and Deduction Analysis
+# Case Study 02: Employee Payroll and Deduction Analysis
 
 ## 1. Problem Statement
 Organizations calculate employee net pay by combining basic salary, allowances, overtime pay, and performance incentives, followed by applying statutory and progressive income tax deductions. Manual processing is error-prone. This case study builds a payroll engine that computes gross salary, applies progressive tax slabs and provident fund deductions, and prints a formatted salary slip for each employee.
