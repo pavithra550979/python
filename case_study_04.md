@@ -1,4 +1,4 @@
-# Case Study 13: ATM Transaction Sequence Simulation
+# Case Study 04: ATM Transaction Sequence Simulation
 
 ## 1. Problem Statement
 Automated Teller Machines (ATMs) process sequences of customer deposits and withdrawals while enforcing strict financial rules such as minimum balance maintenance, per-transaction withdrawal caps, daily withdrawal limits, and denomination multiples. This case study simulates a batch of ATM transactions on an account, rejects invalid operations with clear reasons, and summarizes the session.
