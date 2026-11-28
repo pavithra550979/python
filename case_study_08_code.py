@@ -1,4 +1,4 @@
-# Case Study 48: Tuple-Based Employee Shift Conflict Detection
+# Case Study 08: Tuple-Based Employee Shift Conflict Detection
 # Syllabus Scope: Variables, Data Types, Operators, Conditionals, Loops, Strings, Lists, Tuples, Unpacking
 
 # Shift records: (Emp_ID, Emp_Name, Day, Start_Hour_24h, End_Hour_24h)
