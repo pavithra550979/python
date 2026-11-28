@@ -1,4 +1,4 @@
-# Case Study 63: Multi-Product Price Fluctuation Analysis
+# Case Study 10: Multi-Product Price Fluctuation Analysis
 
 ## 1. Problem Statement
 Essential commodities and retail products experience frequent weekly price swings due to seasonal supply changes and market demand. Procurement teams need to monitor historical price series across multiple products, measure week-over-week percentage changes, identify maximum price swings, and flag products whose volatility exceeds an acceptable threshold.
