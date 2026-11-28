@@ -1,4 +1,4 @@
-# Case Study 63: Multi-Product Price Fluctuation Analysis
+# Case Study 10: Multi-Product Price Fluctuation Analysis
 # Syllabus Scope: Variables, Data Types, Operators, Conditionals, Loops, Strings, Lists, Tuples, Unpacking
 
 # Product price history over 5 weeks: (Product_Name, [Week1, Week2, Week3, Week4, Week5])
