@@ -1,4 +1,4 @@
-# Case Study 57: Smart Canteen Order and Stock Management
+# Case Study 09: Smart Canteen Order and Stock Management
 
 ## 1. Problem Statement
 Campus canteens serve hundreds of orders daily across limited food inventory. Accepting orders for out-of-stock items or failing to deduct stock in real time leads to customer dissatisfaction and accounting mismatches. This case study builds a sequential order processor that validates item codes and stock availability, generates bills, updates live inventory, and produces a daily sales and stock reconciliation report.
