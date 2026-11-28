@@ -1,4 +1,4 @@
-# Case Study 13: ATM Transaction Sequence Simulation
+# Case Study 04: ATM Transaction Sequence Simulation
 # Syllabus Scope: Variables, Data Types, Operators, Conditionals, Loops, Strings, Lists, Tuples, Unpacking
 
 opening_balance = 25000.0
