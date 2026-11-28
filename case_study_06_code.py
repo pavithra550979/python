@@ -1,4 +1,4 @@
-# Case Study 31: String-Based Examination Answer Evaluation
+# Case Study 06: String-Based Examination Answer Evaluation
 # Syllabus Scope: Variables, Data Types, Operators, Conditionals, Loops, Strings, Lists, Tuples, Unpacking
 
 answer_key = "ABCDACBDAB"
