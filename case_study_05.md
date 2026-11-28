@@ -1,4 +1,4 @@
-# Case Study 29: Password Policy Validation Engine
+# Case Study 05: Password Policy Validation Engine
 
 ## 1. Problem Statement
 Weak user passwords expose systems to unauthorized access. Organizations enforce strict password policies covering minimum length, character diversity (uppercase, lowercase, digits, special symbols), absence of consecutive identical characters, and blocking common weak substrings. This case study evaluates candidate passwords against all rules and lists every specific failure reason.
