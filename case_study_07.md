@@ -1,4 +1,4 @@
-# Case Study 42: Student Marks Matrix Analysis
+# Case Study 07: Student Marks Matrix Analysis
 
 ## 1. Problem Statement
 Academic departments maintain student examination scores across multiple subjects in tabular (matrix) form. Educators need both row-wise insights (each student's total, average, and top performer identification) and column-wise insights (subject averages, highest/lowest scores, and flagging subjects with low class averages). This case study processes a 2D nested list of marks to produce these analytics.
