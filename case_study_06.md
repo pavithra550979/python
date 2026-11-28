@@ -1,4 +1,4 @@
-# Case Study 31: String-Based Examination Answer Evaluation
+# Case Study 06: String-Based Examination Answer Evaluation
 
 ## 1. Problem Statement
 Optical Mark Recognition (OMR) and online multiple-choice tests store student responses as character strings (e.g., `"ABCD_B..."`). Manually grading hundreds of response strings against an answer key while applying positive marks for correct answers, negative marks for wrong answers, and zero for unanswered questions is tedious and error-prone. This case study builds an automated string-based evaluation engine.
