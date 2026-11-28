@@ -1,4 +1,4 @@
-# Case Study 57: Smart Canteen Order and Stock Management
+# Case Study 09: Smart Canteen Order and Stock Management
 # Syllabus Scope: Variables, Data Types, Operators, Conditionals, Loops, Strings, Lists, Nested Lists, Tuples, Unpacking
 
 # Inventory stored as list of lists: [Item_Code, Item_Name, Unit_Price, Available_Stock]
