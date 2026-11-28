@@ -1,4 +1,4 @@
-# Case Study 12: Attendance Recovery Computation
+# Case Study 03: Attendance Recovery Computation
 # Syllabus Scope: Variables, Data Types, Operators, Conditionals, Loops, Strings, Lists, Tuples, Unpacking
 
 target_pct = 75.0
