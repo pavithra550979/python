@@ -1,4 +1,4 @@
-# Case Study 42: Student Marks Matrix Analysis
+# Case Study 07: Student Marks Matrix Analysis
 # Syllabus Scope: Variables, Data Types, Operators, Conditionals, Loops, Strings, Lists, Nested Lists
 
 students = ["Kiran", "Pooja", "Rahul", "Sonia", "Tarun"]
