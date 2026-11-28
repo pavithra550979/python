@@ -1,4 +1,4 @@
-# Case Study 2: Progressive Electricity Billing
+# Case Study 01: Progressive Electricity Billing
 
 ## 1. Problem Statement
 Households are billed for electricity based on progressive consumption slabs, along with fixed monthly charges, surcharges for high usage, and rebates for low usage. Additionally, utilities need to monitor billing trends across multiple months to detect sudden spikes in consumption. The objective is to compute accurate monthly electricity bills for a household over several months and identify any unusual increases compared to the previous month.
