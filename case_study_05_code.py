@@ -1,4 +1,4 @@
-# Case Study 29: Password Policy Validation Engine
+# Case Study 05: Password Policy Validation Engine
 # Syllabus Scope: Variables, Data Types, Operators, Conditionals, Loops, Strings, Lists
 
 sample_passwords = [
