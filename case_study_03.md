@@ -1,4 +1,4 @@
-# Case Study 12: Attendance Recovery Computation
+# Case Study 03: Attendance Recovery Computation
 
 ## 1. Problem Statement
 Universities enforce a strict minimum attendance threshold (typically 75%) for examination eligibility. Students who fall below this requirement need to know how many consecutive upcoming classes they must attend—or what attendance rate they must maintain under realistic future scenarios—to regain eligibility before the semester ends.
