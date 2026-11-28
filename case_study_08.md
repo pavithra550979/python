@@ -1,4 +1,4 @@
-# Case Study 48: Tuple-Based Employee Shift Conflict Detection
+# Case Study 08: Tuple-Based Employee Shift Conflict Detection
 
 ## 1. Problem Statement
 In shift-based workplaces such as hospitals, retail stores, and support centers, scheduling errors can accidentally assign the same employee to two overlapping shifts on the same day. Detecting these conflicts before publishing rosters prevents staffing shortages. This case study represents shifts as immutable tuples and uses pairwise interval comparisons to detect overlapping assignments.
